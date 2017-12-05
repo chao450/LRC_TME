@@ -1,0 +1,27 @@
+Ex1
+~((K P) & (K ~(K P)))		Valide
+(K P) & (K K ~P)			Insatisfiable
+~((K P) & ~(K K ~P))		Valide
+
+Ex2
+1. Montrer que F = ~K P <=> K ~K P est valide dans S5
+On montre que ~K P -> K ~K P et K ~K P -> ~K P
+Equivalent à montrer F1 = ~(~(K P) & ~(K ~(K P))) et F2 = ~((K ~(K P)) & (K P)) sont valides dans S5.
+D'après Lotrec, F1 ne présente pas de branche fermée et ~F1 est insatisfiable, donc F1 est valide.
+F2 ne présente pas de branche fermée et ~F2 est insatisfiable, donc F2 est valide.
+F1 et F2 sont valides donc F est valide dans S5.
+
+Montrer que F = ~K P <=> K ~K P n'est pas valide dans S4.
+Soit F1 = ~(~([]P) & ~([](~([]P)))). 
+D'après Lotrec, F1 ne présente pas de branche fermée.
+Mais ~F1 est satisfiable, donc F1 n'est pas valide, il existe une interprétation où F1 soit faux, donc F n'est pas valide dans S4.
+
+Ex4
+La contrainte (a) limite l'agent 3 aux relations (w1,w3) et (w2,w4).
+La contrainte (b) limite l'agent 1 aux relations (w1,w2) et (w3,w4).
+La contrainte (c) limite l'agent 2 au relation (w1,w2).
+
+Donc on a :
+R1 = {(w1,w2),(w3,w4)}
+R2 = {(w1,w2)}
+R3 = {(w1,w3),(w2,w4)}

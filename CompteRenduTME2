@@ -1,0 +1,18 @@
+Ex1 
+2. 
+createNewNode w1
+createNewNode w2
+link w1 w2 R
+link w2 w1 R
+add w1 P
+add w1 Q
+add w2 Q
+
+Ex2
+3.
+L'arbre représentant la formule F = [](p->q)->([]p->[]q) ne présente pas de branche fermée. De plus, toutes les branches de l'arbre représentant ~F sont fermées, c'est à dire que ~F est insatisfiable.
+Donc, la formule F est valide.
+
+
+
+
