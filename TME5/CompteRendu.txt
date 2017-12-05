@@ -1,0 +1,63 @@
+Ex1
+1.
+r(f(X),Y)		--X=f(a) Y=b-- 		r(f(f(a)),b)
+-> p(X,Y)		--X=f(a) Y=b-- 		p(f(a),b)
+== p(f(X),Y)	--X=a 	 Y=b--		p(f(a),b)
+-> r(X,Y)		--X=a	 Y=b--		r(a,b)
+
+Donc c'est vrai.
+
+Ex2
+2.
+?- q(X,b).
+X = b ;
+X = a ;
+false.
+
+Prolog trouve X = b car on a q(X,X).
+			  X = a car q(X,b) :- r(X,Y),q(Y,b) et que on a r(a,b).
+
+			  
+?- q(b,X).
+X = b ;
+false.
+
+Ex4
+
+Ex5
+4. Tableau de vérité du circuit
+?- circuit(X,Y,Z).
+X = Y, Y = 0,
+Z = 1 ;
+X = 0,
+Y = Z, Z = 1 ;
+X = 1,
+Y = Z, Z = 0 ;
+X = Y, Y = Z, Z = 1 ;
+
+5. En fixant Y=1, Z est toujours à 1.
+?- circuit(X,1,Z).
+X = 0,
+Z = 1 ;
+X = Z, Z = 1 ;
+
+En fixant X=0, Z reste à 1.
+?- circuit(0,Y,Z).
+Y = 0,
+Z = 1 ;
+Y = Z, Z = 1 ;
+
+Valeur de X,Y lorsque Z=0
+?- circuit(X,Y,0).
+X = 1,
+Y = 0 ;
+false.
+
+Valeur de X,Y lorsque Z=1
+?- circuit(X,Y,1).
+X = Y, Y = 0 ;
+X = 0,
+Y = 1 ;
+X = Y, Y = 1 ;
+false.
+
