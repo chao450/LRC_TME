@@ -1,0 +1,29 @@
+TME1
+
+1.2.1
+F1 -> insatisfiable car toutes les branches sont fermées.
+F2 -> valide car il n'y a pas de branches fermées et ~F2 est insatisfiable.
+F3 -> insatisfiable car toutes les branches sont fermées.
+F4 -> satisfiable mais non valide car il y a des branches fermées
+F5 -> satisfiable mais non valide car il y a des branches fermées
+F6 -> valide car il n'y a pas de branches fermées et ~F6 est insatisfiable.
+
+1.3.1
+(A) FIEVRE <-> SUP38
+(B) GRIPPE -> TAMIFLU
+(C) (FIEVRE & TOUX) -> GRIPPE
+(D) TOUX & SUP38
+
+1.3.2
+F1 = (FIEVRE <-> SUP38) & (GRIPPE -> TAMIFLU) & ((FIEVRE & TOUX) -> GRIPPE) & TOUX & SUP38
+F2 = (FIEVRE <-> SUP38) & (GRIPPE -> TAMIFLU) & ((FIEVRE & TOUX) -> GRIPPE) & TOUX & SUP38 & ~TAMIFLU
+F1 n'a qu'une seul solution qui est de prendre du tamiflu, F2 est insatisfiable et donc le patient est obligé de prendre du tamiflu.
+
+1.3.3
+F1 = (FIEVRE <-> SUP38) & (GRIPPE -> TAMIFLU) & ((FIEVRE & TOUX) -> GRIPPE v BRONCHITE) & TOUX & SUP38
+Les modèles obtenus avec F1 sont ~GRIPPE FIEVRE BRONCHITE ; TAMIFLU FIEVRE BRONCHITE ; TAMIFLU FIEVRE GRIPPE. On peut observer qu'il existe un modèle sans tamiflu.
+F2 = (FIEVRE <-> SUP38) & (GRIPPE -> TAMIFLU) & ((FIEVRE & TOUX) -> GRIPPE v BRONCHITE) & TOUX & SUP38 & ~TAMIFLU
+La formule F2 ajoute que le patient ne prend pas de tamiflu, d'après lotrec, F2 est satisfiable et donc la prise de tamiflu n'est pas obligatoire.
+
+
+
